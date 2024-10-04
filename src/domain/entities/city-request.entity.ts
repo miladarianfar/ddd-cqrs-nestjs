@@ -1,4 +1,5 @@
-import { Place } from "./place.entity";
+import { Place } from './place.entity';
+import { User } from './user.entity';
 
 export class CityRequest {
   constructor(
@@ -6,9 +7,9 @@ export class CityRequest {
     public readonly postCode: string,
     public readonly country: string,
     public readonly state: string,
-    public readonly places: Place[],
-    public readonly userId: number,
-    public readonly createdOn: Date,
-    public readonly updatedOn: Date,
+    public readonly places: Place[] = [],
+    public readonly user: User,
+    public readonly created_on: Date,
+    public readonly updated_on: Date,
   ) {}
 }

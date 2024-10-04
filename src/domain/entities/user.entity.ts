@@ -1,9 +1,12 @@
+import { CityRequest } from './city-request.entity';
+
 export class User {
   constructor(
     public readonly id: number,
-    private readonly username: string,
-    private readonly password: string,
-    public readonly createdOn: Date,
-    public readonly updatedOn: Date,
+    public username: string,
+    public password: string,
+    public created_on: Date,
+    public updated_on: Date,
+    public cityRequests: CityRequest[] = [],
   ) {}
 }
