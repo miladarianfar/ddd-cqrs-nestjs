@@ -6,7 +6,6 @@ export class CityRequest {
     public readonly id: number,
     public readonly postCode: string,
     public readonly country: string,
-    public readonly state: string,
     public readonly places: Place[] = [],
     public readonly user: User,
     public readonly created_on: Date,

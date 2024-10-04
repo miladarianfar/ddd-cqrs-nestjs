@@ -21,10 +21,7 @@ export class CityRequest {
   country: string;
 
   @Column('json')
-  places: Place;
-
-  @Column()
-  state: string;
+  places: any;
 
   @CreateDateColumn()
   created_on: Date;
@@ -32,6 +29,6 @@ export class CityRequest {
   @UpdateDateColumn()
   updated_on: Date;
 
-  @ManyToOne(() => User, user => user.cityRequests)
+  @ManyToOne(() => User, (user) => user.cityRequests)
   user: User;
 }
