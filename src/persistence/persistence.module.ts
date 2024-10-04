@@ -29,6 +29,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     TypeOrmModule.forFeature([User, CityRequest]),
   ],
   providers: [UserRepository, CityRequestRepository],
-  exports: [TypeOrmModule],
+  exports: [UserRepository, CityRequestRepository, TypeOrmModule],
 })
 export class PersistenceModule {}
