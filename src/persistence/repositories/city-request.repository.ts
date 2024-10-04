@@ -20,6 +20,7 @@ export class CityRequestRepository {
     offset: number,
   ): Promise<CityRequest[]> {
     return this.cityRequestRepo.find({
+      where: { user: { id: userId } },
       take: limit,
       skip: offset,
     });

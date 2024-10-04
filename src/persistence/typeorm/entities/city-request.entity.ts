@@ -1,10 +1,13 @@
+import { Place } from 'src/domain/entities/place.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { User } from './user.entity';
 
 @Entity()
 export class CityRequest {
@@ -18,7 +21,7 @@ export class CityRequest {
   country: string;
 
   @Column('json')
-  places: any;
+  places: Place;
 
   @Column()
   state: string;
@@ -28,4 +31,7 @@ export class CityRequest {
 
   @UpdateDateColumn()
   updated_on: Date;
+
+  @ManyToOne(() => User, user => user.cityRequests)
+  user: User;
 }
